@@ -7,14 +7,17 @@
 
 <body style="background-color:black;">
 </body>
-<div class="login">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<div class="login" ng-app="myApp" ng-controller="myCtrl">
+    <p>{{data}}</p>
     <form asp-controller="Home" asp-action="Index">
-        <label>USUÁRIO<input type="text" asp-for="nome" placeholder="USUÁRIO" required class="form-control"></label><br><br>
+        <label>USUÁRIO<input type="text" asp-for="nome" ng-keydown="verificaLetra()" id="usuario" placeholder="USUÁRIO" required class="form-control"></label><br><br>
         <label>SENHA<input type="password" asp-for="senha" placeholder="SENHA" required CLASS="form-control"></label><br><br />
-        <input value="ENTRAR" type="submit" class="btn btn-success" /><br>
+        <input value="ENTRAR" ng-click="teste()" type="button" class="btn btn-success" /><br>
 
     </form>
-
 
 </div>
 
@@ -24,4 +27,20 @@
     <div class="alerta">TempData["$AlertMessage$"]</div>
 }
 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+
+        function dataAtualFormatada() {
+            var data = new Date(),
+                dia = data.getDate().toString().padStart(2, '0'),
+                mes = (data.getMonth() + 1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
+                ano = data.getFullYear();
+            return dia + "/" + mes + "/" + ano;
+        }
+
+        $scope.data = dataAtualFormatada();
+
+    });
+</script>
 
