@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Pedrinho.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/mod.cshtml";
+
+}
+
+<body style="background-color:#222;">
+</body>
+
+<center>
+    <h2 class="titulos">Lista de Usuarios</h2>
+</center>
+
+<table class="table">
+    <thead>
+        <tr class="campoTxt">
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoAcesso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="campoTxt">
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.senha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipoAcesso)
+                </td>
+                <td>
+                   
+                  
+                    <a asp-action="Details" asp-route-id="@item.usuarioId">Detalhar</a> 
+             
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

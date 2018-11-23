@@ -10,6 +10,7 @@ namespace Pedrinho.Models
         public int bugId { get; set; }
         public int enigmaId { get; set; }
         public int usuarioId { get; set; }
-        public int descricao { get; set; }
+        public string descricao { get; set; }
+        public string resposta { get; set; }
     }
 }

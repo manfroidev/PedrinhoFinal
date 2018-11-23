@@ -33,6 +33,10 @@ namespace Pedrinho.Controllers
                 if(usuarioLogado.tipoAcesso == "admin")
                 return RedirectToAction("Index", "Usuario");
             }
+            if (usuarioLogado.tipoAcesso == "moderador")
+            {
+                return RedirectToAction("Index", "Bug");
+            }
             return View();
         }
 

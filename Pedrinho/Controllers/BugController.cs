@@ -9,22 +9,22 @@ using Pedrinho.Models;
 
 namespace Pedrinho.Controllers
 {
-    public class BugsController : Controller
+    public class BugController : Controller
     {
         private readonly PedrinhoContext _context;
 
-        public BugsController(PedrinhoContext context)
+        public BugController(PedrinhoContext context)
         {
             _context = context;
         }
 
-        // GET: Bugs
+        // GET: Bug
         public async Task<IActionResult> Index()
         {
             return View(await _context.Bug.ToListAsync());
         }
 
-        // GET: Bugs/Details/5
+        // GET: Bug/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,18 +42,18 @@ namespace Pedrinho.Controllers
             return View(bug);
         }
 
-        // GET: Bugs/Create
+        // GET: Bug/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Bugs/Create
+        // POST: Bug/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("bugId,enigmaId,usuarioId,descricao")] Bug bug)
+        public async Task<IActionResult> Create([Bind("bugId,enigmaId,usuarioId,descricao,resposta")] Bug bug)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace Pedrinho.Controllers
             return View(bug);
         }
 
-        // GET: Bugs/Edit/5
+        // GET: Bug/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,12 +80,12 @@ namespace Pedrinho.Controllers
             return View(bug);
         }
 
-        // POST: Bugs/Edit/5
+        // POST: Bug/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("bugId,enigmaId,usuarioId,descricao")] Bug bug)
+        public async Task<IActionResult> Edit(int id, [Bind("bugId,enigmaId,usuarioId,descricao,resposta")] Bug bug)
         {
             if (id != bug.bugId)
             {
@@ -115,7 +115,7 @@ namespace Pedrinho.Controllers
             return View(bug);
         }
 
-        // GET: Bugs/Delete/5
+        // GET: Bug/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace Pedrinho.Controllers
             return View(bug);
         }
 
-        // POST: Bugs/Delete/5
+        // POST: Bug/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
