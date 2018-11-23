@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Pedrinho.Models
 {
+
     public class Usuario
     {
         public  int usuarioId { get; set; }

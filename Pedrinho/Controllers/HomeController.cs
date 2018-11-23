@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Pedrinho.Models;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Pedrinho.Models;
 
 namespace Pedrinho.Controllers
 {
@@ -24,19 +22,28 @@ namespace Pedrinho.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(Usuario usuario)
+       
+        public async Task<IActionResult> Index(Usuario usuario)          
+             
         {
+           
+        Usuario usuarioLogado = _context.Usuario.Where(x => x.nome == usuario.nome && x.senha == usuario.senha).FirstOrDefault();
 
-            Usuario usuarioLogado = _context.Usuario.Where(x => x.nome == usuario.nome && x.senha == usuario.senha).FirstOrDefault();
-            if (usuarioLogado != null)
-            {
-                if(usuarioLogado.tipoAcesso == "admin")
-                return RedirectToAction("Index", "Usuario");
-            }
-            if (usuarioLogado.tipoAcesso == "moderador")
-            {
-                return RedirectToAction("Index", "Bug");
-            }
+                if (usuarioLogado != null)
+                {
+                    if (usuarioLogado.tipoAcesso == "admin")
+                    {
+                        return RedirectToAction("Index", "Usuario");
+                    }
+
+                    if (usuarioLogado.tipoAcesso == "moderador")
+                    {
+                        return RedirectToAction("Index", "Bug");
+                    }
+
+                }
+       
+            
             return View();
         }
 

@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.descricao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.resposta)
+                 @Html.DisplayNameFor(model => model.resposta)
             </th>
             <th></th>
         </tr>
@@ -33,25 +33,28 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.enigmaId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.usuarioId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.descricao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.resposta)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.bugId">Responder</a> |
-                    <a asp-action="Details" asp-route-id="@item.bugId">Detalhar</a>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.enigmaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuarioId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.resposta)
+            </td>
+            
+            <td>
 
-                </td>
-            </tr>
+                <a asp-action="Edit" asp-route-id="@item.bugId">Responder</a><br />
+                <a asp-action="Details" asp-route-id="@item.bugId">Detalhar</a>
+
+            </td>
+        </tr>
         }
     </tbody>
 </table>
