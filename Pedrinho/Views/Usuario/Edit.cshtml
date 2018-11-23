@@ -33,10 +33,15 @@
             <input asp-for="senha" class="campoForm" />
             <span asp-validation-for="senha" class="text-danger"></span>
         </div>
+
+        <br />
+        
         <div>
             <label class="campoTxt">Tipo de Acesso</label>
             <div asp-for="tipoAcesso"></div>
-            <input asp-for="tipoAcesso" class="campoForm" />
+            <label class="campoTxt">Admin</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="admin" name="tipoAcesso" />
+            <label class="campoTxt">Moderador</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="moderador" name="tipoAcesso" />
+            <label class="campoTxt">User</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="user" name="tipoAcesso" />
             <span asp-validation-for="tipoAcesso"></span>
         </div>
         <br />

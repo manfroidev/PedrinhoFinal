@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/admin.cshtml";
+
 }
+
 <body style="background-color:#222;">
 </body>
 
@@ -30,26 +32,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr class="campoTxt">
-            <td>
-                @Html.DisplayFor(modelItem => item.nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.senha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tipoAcesso)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.usuarioId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.usuarioId">Detalhar</a> |
-                <a asp-action="Delete" asp-route-id="@item.usuarioId">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="campoTxt">
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.senha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipoAcesso)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.usuarioId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.usuarioId">Detalhar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.usuarioId">Deletar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
