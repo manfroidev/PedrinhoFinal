@@ -30,7 +30,7 @@ namespace Pedrinho.Controllers
             Usuario usuarioLogado = _context.Usuario.Where(x => x.nome == usuario.nome && x.senha == usuario.senha).FirstOrDefault();
             if (usuarioLogado != null)
             {
-                //if(usuarioLogado.nivelAcesso == 1)
+                if(usuarioLogado.tipoAcesso == "admin")
                 return RedirectToAction("Index", "Usuario");
             }
             return View();

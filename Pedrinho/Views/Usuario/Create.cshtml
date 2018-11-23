@@ -25,20 +25,31 @@
         <div class="form-group">
             <label class="campoTxt">E-mail</label>
             <div asp-for="email"></div>
-            <input asp-for="email" class="campoForm" type="email" required/>
+            <input asp-for="email" class="campoForm" type="email" required />
             <span asp-validation-for="email"></span>
         </div>
         <div>
             <label class="campoTxt">Senha</label>
             <div asp-for="senha"></div>
-            <input asp-for="senha" class="campoForm" type="password" required/>
+            <input asp-for="senha" class="campoForm" type="password" required />
             <span asp-validation-for="senha"></span>
         </div>
+        <br />
+        <div>
+            <label class="campoTxt">Tipo de Acesso</label>
+            <div asp-for="tipoAcesso"></div>
+            <label class="campoTxt">Admin</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="admin" name="tipoAcesso"/>
+            <label class="campoTxt">Moderador</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="moderador" name="tipoAcesso"/>
+            <label class="campoTxt">User</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="user" name="tipoAcesso"/>
+            <span asp-validation-for="tipoAcesso"></span>
+        </div>
+
+        <br />
         <div>
             <br />
-            
+
             <a asp-action="Index" class="btnVoltar">
-                    <input type="button" value="Voltar" class="btnVoltar"/> 
+                <input type="button" value="Voltar" class="btnVoltar" />
             </a>
             <input type="submit" value="Salvar" class="btnSalvar" />
         </div>
@@ -46,8 +57,10 @@
 
 
 
+
+
         <br /><br /><br />
-       
+
 
 
 

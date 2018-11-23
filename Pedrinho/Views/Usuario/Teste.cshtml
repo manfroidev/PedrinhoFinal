@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Pedrinho.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+<body style="background-color:#222;">
+</body>
+
+<center>
+    <h2 class="titulos">HOME</h2>
+
+        
+    <a asp-area="" asp-controller="Bugs" asp-action="Index">
+        <input type="button" value="Página Bugs" class="btnSalvar" />
+    </a>
+
+    <a asp-area="" asp-controller="Contato" asp-action="Index">
+        <input type="button" value="Página Contato" class="btnSalvar" />
+    </a>
+
+</center>
+

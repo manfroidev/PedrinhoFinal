@@ -2,18 +2,16 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/admin.cshtml";
 }
-<body style="background-color:#222;">
-</body>
 
-<center>
-    <h2 class="titulos">Lista de Usuarios</h2>
-</center>
+<h2>Index</h2>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
-        <tr class="campoTxt">
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.nome)
             </th>
@@ -31,7 +29,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr class="campoTxt">
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.nome)
             </td>
@@ -45,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.tipoAcesso)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.usuarioId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.usuarioId">Detalhar</a> |
-                <a asp-action="Delete" asp-route-id="@item.usuarioId">Deletar</a>
+                <a asp-action="Edit" asp-route-id="@item.usuarioId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.usuarioId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.usuarioId">Delete</a>
             </td>
         </tr>
 }

@@ -53,7 +53,7 @@ namespace Pedrinho.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Usuario usuario)
+        public async Task<IActionResult> Create([Bind("usuarioId,nome,email,senha,tipoAcesso")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Pedrinho.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("usuarioId,nome,email,senha")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("usuarioId,nome,email,senha,tipoAcesso")] Usuario usuario)
         {
             if (id != usuario.usuarioId)
             {
