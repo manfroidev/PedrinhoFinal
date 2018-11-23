@@ -35,3 +35,254 @@ body {
         display: none;
     }
 }
+
+/* não fixo */
+
+.barra {
+    min-height: 2px;
+    height: 3px;
+    border-radius: 7px;
+    background-color: rgba(54,133,62,61);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1), inset 0 1px 0 rgba(0,0,0,0.25);
+    width: 280px;
+    left: 450px;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.imagemIndex {
+    width: 200px;
+    left: 100%;
+    margin-left: 470px;
+}
+
+.imagemIcones {
+    width: 20px;
+    position: absolute;
+    left: 100%;
+    margin-left: -250px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #8D6AA4 !important;
+    display: inline-block;
+    left: 650px;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #36853E !important;
+        border-bottom: 3px solid;
+        top: -5px;
+    }
+
+.imgbody {
+    background-image: url("../images/charadaaaaaaaaaaaaaa.jpg");
+    display: table;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+    color: white;
+    background-position: 35% 1%;
+    background-size: cover;
+    
+}
+
+.imgInigma {
+    background-image: url("../Imagens/charadas.png");
+    display: table;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+    color: white;
+    background-position: 35% 1%;
+    background-size: cover;
+}
+
+.footerFixed {
+    position: absolute;
+    width: 50%;
+    z-index: 1;
+    bottom: 0px;
+}
+
+.caixa {
+    text-align: center;
+    font-size: 18px;
+    white-space: normal;
+    height: 160px;
+    width: 500px;
+    padding: 25px 25px 200px 25px;
+    position: absolute;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: 20%;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.btn1 {
+    text-align: center;
+    position: absolute;
+    top: 95%;
+    margin-top: -100px;
+    margin-left: 43%;
+    border: hidden;
+    border-radius: 10px;
+    background-color: #8D6AA4;
+    color: white;
+    width:150px;
+}
+
+.btn1:hover {
+    background-color: #36853E;
+    color:white;
+    text-decoration: none;
+}
+
+
+.tituloEnigmas {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    height: 30px;
+    color: #612885;
+    border-bottom: 3px solid;
+    border-color: #36853E;
+    width: 150px;
+    margin-left: 40%;
+    text-align: center;
+}
+
+.txtEnigmas {
+    text-align: center;
+    font-size: 18px;
+    white-space: normal;
+    height: 160px;
+    width: 500px;
+    padding: 25px 25px 200px 25px;
+    position: absolute;
+    top: 35%;
+    margin-top: -100px;
+    margin-left: 20%;
+}
+
+.resposta {
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 90%;
+    margin-top: -100px;
+    margin-left: 40%;
+    border: hidden;
+    border-radius: 10px;
+}
+/*LOGIN*/
+
+.btn {
+    width: 100px;
+}
+.login {
+    padding: 20%;
+    text-align: center;
+    color:white;
+}
+
+/* formes */
+
+.campoForm {
+    display: block;
+    width: 500px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #36853E;
+    font-weight: bold;
+
+}
+
+.titulos {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    height: 50px;
+    color: #612885;
+    border-bottom: 3px solid;
+    border-color: #36853E;
+    width: 500px;
+   
+    text-align: center;
+}
+
+.campoTxt {
+    color: white;
+    font-size:14px;    
+}
+
+.btnSalvar {
+    text-align: center;   
+    border: hidden;
+    border-radius: 10px;
+    background-color: #8D6AA4;
+    color: white;
+    width: 155px;
+    height:40px;
+}
+
+.btnSalvar:hover {
+    background-color: #36853E;
+    color: white;
+    text-decoration: none;
+}
+
+.btnVoltar {
+    text-align: center;
+    border: hidden;
+    border-radius: 10px;
+    background-color: #8D6AA4;
+    color: white;
+    width: 155px;
+    height: 40px;
+}
+
+
+.btnVoltar:hover {
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+/*remover tag do a */
+
+a:link {
+    text-decoration: none;
+}
+
+a {
+    color: #8D6AA4;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #36853E;
+}
+
+
+.editar {
+    width: 70px;
+    text-align: center;
+    border: hidden;
+    border-radius: 10px;
+    background-color: #8D6AA4;
+    color: white;
+    
+}
+.editar:hover{
+    background-color: #36853E;
+
+}

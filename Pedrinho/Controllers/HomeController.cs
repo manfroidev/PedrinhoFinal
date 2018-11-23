@@ -10,8 +10,29 @@ namespace Pedrinho.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly PedrinhoContext _context;
+
+        public HomeController(PedrinhoContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(Usuario usuario)
+        {
+
+            Usuario usuarioLogado = _context.Usuario.Where(x => x.nome == usuario.nome && x.senha == usuario.senha).FirstOrDefault();
+            if (usuarioLogado != null)
+            {
+                //if(usuarioLogado.nivelAcesso == 1)
+                return RedirectToAction("Index", "Usuario");
+            }
             return View();
         }
 

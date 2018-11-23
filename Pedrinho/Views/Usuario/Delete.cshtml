@@ -1,0 +1,54 @@
+﻿@model Pedrinho.Models.Usuario
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+
+<body style="background-color:#222;">
+</body>
+
+
+<center>
+    <h2 class="titulos">Deletar o usuario @Html.DisplayFor(model => model.nome) ?</h2>
+</center>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal campoTxt">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.senha)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.senha)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <Center>
+            <div>
+                <input type="hidden" asp-for="usuarioId" />
+                <a asp-action="Index" class="btnVoltar">
+                    <input type="button" value="Voltar" class="btnVoltar" />
+                </a>
+                <a asp-action="Edit" asp-route-id="@Model.usuarioId">
+                    <input type="submit" value="Deletar" class="btnSalvar" />
+                </a> |
+            </div>
+        </Center>
+
+    </form>
+</div>

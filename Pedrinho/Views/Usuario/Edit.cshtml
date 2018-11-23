@@ -1,0 +1,50 @@
+﻿@model Pedrinho.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/admin.cshtml";
+}
+<body style="background-color:#222;">
+</body>
+<center>
+    <h2 class="titulos">Editar</h2>
+
+
+    <hr />
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="usuarioId" />
+                <div>
+                    <label class="campoTxt">Nome</label>
+                    <div asp-for="nome" class="campoTxt"></div>
+                    <input asp-for="nome" class="campoForm" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+                <div>
+                    <label class="campoTxt">E-mail</label>
+                    <div asp-for="email" class="campoTxt"></div>
+                    <input asp-for="email" class="campoForm" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+                <div>
+                    <label class="campoTxt">Senha</label>
+                    <div asp-for="senha" class="campoTxt"></div>
+                    <input asp-for="senha" class="campoForm"/>
+                    <span asp-validation-for="senha" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <a asp-action="Index" class="btnVoltar">
+                        <input type="button" value="Voltar" class="btnVoltar" />
+                    </a>
+                    <input type="submit" value="Salvar" class="btnSalvar" />
+
+
+                </div>
+            </form>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</center>
