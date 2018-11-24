@@ -9,25 +9,26 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div  class="col-md-12">
+    <div class="login" ng-app="myApp" ng-controller="myCtrl">
+        <p>{{data}}</p>
+        <form asp-controller="Home" asp-action="Index">
+            <label>USUÁRIO<input type="text" asp-for="nome" ng-keydown="verificaLetra()" id="usuario" placeholder="USUÁRIO" required class="form-control"></label><br><br>
+            <label>SENHA<input type="password" asp-for="senha" placeholder="SENHA" required CLASS="form-control"></label><br><br />
+            <input value="ENTRAR" type="submit" class="btn btn-success" /><br><br />
+        </form>
 
-<div class="login" ng-app="myApp" ng-controller="myCtrl">
-    <p>{{data}}</p>
-    <form asp-controller="Home" asp-action="Index">
-        <label>USUÁRIO<input type="text" asp-for="nome" ng-keydown="verificaLetra()" id="usuario" placeholder="USUÁRIO" required class="form-control"></label><br><br>
-        <label>SENHA<input type="password" asp-for="senha" placeholder="SENHA" required CLASS="form-control"></label><br><br />
-        <input value="ENTRAR" type="submit" class="btn btn-success" /><br><br />
-    </form>
+        <a asp-area="" asp-controller="Usuario" asp-action="Novo">Se Cadastre aqui</a>
 
-    <a asp-area="" asp-controller="Usuario" asp-action="Novo">Se Cadastre aqui</a>
+    </div>
+
+
+    @if (TempData["$$"] != null)
+    {
+        <div class="alerta">TempData["$AlertMessage$"]</div>
+    }
 
 </div>
-
-
-@if (TempData["$$"] != null)
-{
-    <div class="alerta">TempData["$AlertMessage$"]</div>
-}
-
 <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope) {
