@@ -223,6 +223,14 @@ body {
     font-size:14px;    
 }
 
+
+.FormTxt {
+    color: black;
+    font-size: 14px;
+}
+
+
+
 .btnSalvar {
     text-align: center;   
     border: hidden;
