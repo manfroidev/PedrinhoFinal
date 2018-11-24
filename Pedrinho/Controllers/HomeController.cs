@@ -41,7 +41,12 @@ namespace Pedrinho.Controllers
                         return RedirectToAction("Index", "Bug");
                     }
 
+                if (usuarioLogado.tipoAcesso == "user")
+                {
+                    return RedirectToAction("Index", "Enigma");
                 }
+
+            }
        
             
             return View();
