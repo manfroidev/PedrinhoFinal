@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Enigma\Enigma.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\user.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

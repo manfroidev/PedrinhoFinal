@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Pedrinho.Models;
+﻿using Microsoft.EntityFrameworkCore;
+
 
 namespace Pedrinho.Models
 {
     public class PedrinhoContext : DbContext
     {
+        public PedrinhoContext()
+        {
+        }
+
         public PedrinhoContext (DbContextOptions<PedrinhoContext> options)
             : base(options)
         {

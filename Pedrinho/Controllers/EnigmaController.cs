@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pedrinho.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Pedrinho.Controllers
 {
+
     public class EnigmaController : Controller
     {
+
+        private PedrinhoContext db = new PedrinhoContext();
+        private string buscaString;
+
+
         private readonly PedrinhoContext _context;
 
         public EnigmaController(PedrinhoContext context)
@@ -22,11 +26,7 @@ namespace Pedrinho.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Enigma.ToListAsync());
-        }
-
-
-
-   
+        }   
 
 
         // GET: Enigmata/Details/5
@@ -51,7 +51,7 @@ namespace Pedrinho.Controllers
         public IActionResult Create()
         {
             return View();
-        }
+        }   
 
         // POST: Enigmata/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -70,9 +70,15 @@ namespace Pedrinho.Controllers
         }
 
 
+        public IActionResult Enigma()
+        {
+            return View();
+        }
 
-
-
+        public IActionResult Enigma1()
+        {
+            return View();
+        }
         // GET: Enigmata/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
