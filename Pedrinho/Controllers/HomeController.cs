@@ -43,7 +43,7 @@ namespace Pedrinho.Controllers
 
                 if (usuarioLogado.tipoAcesso == "user")
                 {
-                    return RedirectToAction("Index", "Enigma");
+                    return RedirectToAction("Enigma", "Enigma");
                 }
 
             }

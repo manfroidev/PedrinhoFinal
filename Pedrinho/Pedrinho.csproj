@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Enigma\Enigmas.cshtml" />
     <Content Remove="Views\Usuario\modLista.cshtml" />
   </ItemGroup>
 
@@ -15,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Shared\user.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\mod.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

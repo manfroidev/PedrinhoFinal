@@ -24,6 +24,11 @@ namespace Pedrinho.Controllers
             return View(await _context.Enigma.ToListAsync());
         }
 
+
+
+   
+
+
         // GET: Enigmata/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -63,6 +68,10 @@ namespace Pedrinho.Controllers
             }
             return View(enigma);
         }
+
+
+
+
 
         // GET: Enigmata/Edit/5
         public async Task<IActionResult> Edit(int? id)
