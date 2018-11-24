@@ -7,25 +7,25 @@
     Layout = "~/Views/Shared/mod.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Bugs</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Cadastrar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.enigmaId)
+                @Html.DisplayName("Id do Enigma")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.usuarioId)
+                @Html.DisplayName("Id do Usuário")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricao)
+                @Html.DisplayName("Descrição")
             </th>
             <th>
-                 @Html.DisplayNameFor(model => model.resposta)
+                 @Html.DisplayName("Resposta")
             </th>
             <th></th>
         </tr>
