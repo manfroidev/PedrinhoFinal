@@ -2,34 +2,35 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/mod.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
     <h4>Bug</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.enigmaId)
+            <label>Id do Enigma</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.enigmaId)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.usuarioId)
+            <label>Id do Usuário</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.usuarioId)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.descricao)
+            <label>Descrição</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.descricao)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.resposta)
+            <label>Resposta</label>
         </dt>
         <dd>
             @Html.DisplayFor(model => model.resposta)
@@ -37,6 +38,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.bugId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar</a>
 </div>
