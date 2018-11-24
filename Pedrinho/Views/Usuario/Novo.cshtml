@@ -1,0 +1,70 @@
+﻿@model Pedrinho.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+
+
+<body style="background-color:black;">
+</body>
+
+<fieldset>
+    <center>
+        <h2 class="titulos">Cadastro</h2>
+
+
+        <hr />
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <label class="campoTxt">Nome</label>
+                <div asp-for="nome"></div>
+                <input asp-for="nome" class="campoForm" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+
+            </div><br />
+                  <div class="form-group">
+                      <label class="campoTxt">E-mail</label>
+                      <div asp-for="email"></div>
+                      <input asp-for="email" class="campoForm" type="email" required />
+                      <span asp-validation-for="email" class="text-danger"></span>
+
+                  </div>
+                  <div>
+                      <label class="campoTxt">Senha</label>
+                      <div asp-for="senha"></div>
+                      <input asp-for="senha" class="campoForm" type="password" required />                     
+                      <span asp-validation-for="senha" class="text-danger"></span>
+
+                  </div>
+            <br />
+            <div>
+                <label class="campoTxt">Tipo de Acesso</label>
+                <div asp-for="tipoAcesso"></div>               
+                <label class="campoTxt">User</label><input asp-for="tipoAcesso" class="campoRadio" type="radio" value="user" name="tipoAcesso" /><br />
+                <span asp-validation-for="tipoAcesso" class="text-danger"></span>
+
+            </div>
+
+            <br />
+            <div>
+                <br />
+               
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="btnVoltar">
+                    <input type="button" value="Voltar" class="btnVoltar" />
+                </a>
+                <input type="submit" value="Salvar" class="btnSalvar" />
+            </div>
+
+        </form>
+    </center>
+
+</fieldset>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+

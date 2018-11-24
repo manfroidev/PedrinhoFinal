@@ -21,6 +21,9 @@
     <Content Update="Views\Shared\admin.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Usuario\Novo.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Usuario\mod.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

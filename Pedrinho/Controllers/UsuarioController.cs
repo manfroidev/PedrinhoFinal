@@ -66,6 +66,29 @@ namespace Pedrinho.Controllers
             return View(usuario);
         }
 
+
+        // GET: Usuarios/Novo
+        public IActionResult Novo()
+        {
+            return View();
+        }
+
+        // POST: Usuarios/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Novo([Bind("usuarioId,nome,email,senha,tipoAcesso")] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(usuario);
+        }
+
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
