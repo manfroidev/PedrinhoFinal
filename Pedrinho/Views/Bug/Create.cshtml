@@ -3,46 +3,48 @@
 @{
     ViewData["Title"] = "Create";
 }
+<body style="background-color:black;">
+</body>
+<center>
+    <h4 class="titulos">Relatar Bug</h4>
 
-<h2>Cadastrar</h2>
 
-<h4>Bug</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label class="control-label">Id do Enigma</label>
-                <input asp-for="enigmaId" class="form-control" />
-                <span asp-validation-for="enigmaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Id do usuário</label>
-                <input asp-for="usuarioId" class="form-control" />
-                <span asp-validation-for="usuarioId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Descrição</label>
-                <input asp-for="descricao" class="form-control" />
-                <span asp-validation-for="descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label  class="control-label">Resposta</label>
-                <input asp-for="resposta" class="form-control" />
-                <span asp-validation-for="resposta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
-            </div>
-        </form>
+    <hr />
+
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label class="campoTxt">Numero do Enigma</label>
+            <input asp-for="enigmaId" class="campoForm" />
+            <span asp-validation-for="enigmaId" class="text-danger"></span>
+        </div><br />
+    
+        <div>
+            <label class="campoTxt">Descrição</label>
+            <input asp-for="descricao" class="campoForm" />
+            <span asp-validation-for="descricao" class="text-danger"></span>
+        </div><br />
+        <div>
+            <label class="campoTxt">Resposta</label>
+            <input asp-for="resposta" class="campoForm" readonly="true" style="background-color:dimgray;" />
+            <span asp-validation-for="resposta" class="text-danger"></span>
+        </div><br />
+              <div class="form-group">
+                  <a asp-area="" asp-controller="Bug" asp-action="ListaUser">
+                      <input type="button" value="Voltar" class="btnVoltar" />
+                  </a>
+                  <input type="submit" value="Salvar" class="btnSalvar" />
+              </div>
+    </form>
+
+    <br />
+    <div>
+
+      
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Voltar</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</center>

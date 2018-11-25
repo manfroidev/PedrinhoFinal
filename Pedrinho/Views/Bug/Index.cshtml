@@ -7,54 +7,57 @@
     Layout = "~/Views/Shared/mod.cshtml";
 }
 
-<h2>Bugs</h2>
+<body style="background-color:#222;">
+</body>
 
-<p>
-    <a asp-action="Create">Cadastrar</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayName("Id do Enigma")
-            </th>
-            <th>
-                @Html.DisplayName("Id do Usuário")
-            </th>
-            <th>
-                @Html.DisplayName("Descrição")
-            </th>
-            <th>
-                 @Html.DisplayName("Resposta")
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.enigmaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.usuarioId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descricao)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.resposta)
-            </td>
-            
-            <td>
+<Center>
+    <h2 class="titulos">Bugs</h2><br></br>
 
-                <a asp-action="Edit" asp-route-id="@item.bugId">Responder</a><br />
-                <a asp-action="Details" asp-route-id="@item.bugId">Detalhar</a>
 
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr class="campoTxt">
+                <th>
+                    @Html.DisplayName("Id do Enigma")
+                </th>
+                <th>
+                    @Html.DisplayName("Id do Usuário")
+                </th>
+                <th>
+                    @Html.DisplayName("Descrição")
+                </th>
+                <th>
+                    @Html.DisplayName("Resposta")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="campoTxt">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.enigmaId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.usuarioId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descricao)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.resposta)
+                    </td>
+
+                    <td>
+
+                        <a asp-action="Edit" asp-route-id="@item.bugId">Responder</a><br />
+                       
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</Center>

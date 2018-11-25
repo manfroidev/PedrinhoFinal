@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Pedrinho.Models.Bug>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/user.cshtml";
+}
+<body style="background-color:#222;">
+</body><br />
+<li style="margin-left:900px;"><a asp-area="" asp-controller="Bug" asp-action="Create">Cadastrar Erros</a></li>
+
+<center>
+    <h2 class="titulos">Reportar Erro</h2>
+
+</center>
+
+
+<table class="table">
+
+
+    <thead>
+        <tr class="campoTxt">
+            <th>
+
+                @Html.DisplayName("Numero Enigma")
+            </th>
+
+            <th>
+                @Html.DisplayName("Descrição")
+            </th>
+            <th>
+                @Html.DisplayName("Resposta")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="campoTxt">
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.enigmaId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.resposta)
+                </td>
+
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.usuarioId">Detalhar</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

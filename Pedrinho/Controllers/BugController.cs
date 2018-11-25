@@ -24,6 +24,14 @@ namespace Pedrinho.Controllers
             return View(await _context.Bug.ToListAsync());
         }
 
+       
+
+        // GET: Bug
+        public async Task<IActionResult> listaUser()
+        {
+            return View(await _context.Bug.ToListAsync());
+        }
+
         // GET: Bug/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -59,10 +67,16 @@ namespace Pedrinho.Controllers
             {
                 _context.Add(bug);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(listaUser));
             }
             return View(bug);
         }
+
+
+   
+
+
+
 
         // GET: Bug/Edit/5
         public async Task<IActionResult> Edit(int? id)

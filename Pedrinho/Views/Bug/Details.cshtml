@@ -4,13 +4,16 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/mod.cshtml";
 }
-
-<h2>Detalhes</h2>
+<body style="background-color:#222;">
+</body>
+<center>
+    <h2 class="titulos">Detalhes</h2>
+</center>
 
 <div>
-    <h4>Bug</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal campoTxt">
         <dt>
             <label>Id do Enigma</label>
         </dt>
@@ -37,6 +40,13 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Index">Voltar</a>
-</div>
+
+<center>
+    <div>
+
+        <a asp-area="" asp-controller="Bug" asp-action="ListaUser" class="btnVoltar">
+            <input type="button" value="Voltar" class="btnVoltar" />
+        </a>
+    </div>
+</center>
+
