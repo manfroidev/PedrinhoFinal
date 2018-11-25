@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Pedrinho.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Pedrinho.Models;
 
 namespace Pedrinho.Controllers
 {
@@ -15,13 +18,13 @@ namespace Pedrinho.Controllers
             _context = context;
         }
 
-        // GET: contatoes
+        // GET: Contato
         public async Task<IActionResult> Index()
         {
             return View(await _context.Contato.ToListAsync());
         }
 
-        // GET: contatoes/Details/5
+        // GET: Contato/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,29 +42,31 @@ namespace Pedrinho.Controllers
             return View(contato);
         }
 
-        // GET: contatoes/Create
+        // GET: Contato/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: contatoes/Create
+        // POST: Contato/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("contatoId,nome,descricao,usuarioId")] Contato contato)
+        public async Task<IActionResult> Create([Bind("contatoId,nome,sobrenome,email,telefone,mensagem")] Contato contato)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(contato);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+               
+                return RedirectToAction("Final", "Home");
+
             }
             return View(contato);
         }
 
-        // GET: contatoes/Edit/5
+        // GET: Contato/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,12 +82,12 @@ namespace Pedrinho.Controllers
             return View(contato);
         }
 
-        // POST: contatoes/Edit/5
+        // POST: Contato/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("contatoId,nome,descricao,usuarioId")] Contato contato)
+        public async Task<IActionResult> Edit(int id, [Bind("contatoId,nome,sobrenome,email,telefone,mensagem")] Contato contato)
         {
             if (id != contato.contatoId)
             {
@@ -98,7 +103,7 @@ namespace Pedrinho.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!contatoExists(contato.contatoId))
+                    if (!ContatoExists(contato.contatoId))
                     {
                         return NotFound();
                     }
@@ -112,7 +117,7 @@ namespace Pedrinho.Controllers
             return View(contato);
         }
 
-        // GET: contatoes/Delete/5
+        // GET: Contato/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,7 +135,7 @@ namespace Pedrinho.Controllers
             return View(contato);
         }
 
-        // POST: contatoes/Delete/5
+        // POST: Contato/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -141,7 +146,7 @@ namespace Pedrinho.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool contatoExists(int id)
+        private bool ContatoExists(int id)
         {
             return _context.Contato.Any(e => e.contatoId == id);
         }

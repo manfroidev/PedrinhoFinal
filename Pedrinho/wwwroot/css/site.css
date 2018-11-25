@@ -184,7 +184,7 @@ body {
 .login {
     padding: 5%;
     text-align: center;
-    color:black;
+    color:white;
 }
 
 /* formes */
@@ -223,6 +223,12 @@ body {
     font-size:14px;    
 }
 
+.campoResposta {
+    color: black;
+    font-size: 14px;
+    
+
+}
 
 .FormTxt {
     color: black;

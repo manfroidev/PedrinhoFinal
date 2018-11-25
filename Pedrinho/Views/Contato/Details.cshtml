@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>contato</h4>
+    <h4>Contato</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,16 +17,28 @@
             @Html.DisplayFor(model => model.nome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.descricao)
+            @Html.DisplayNameFor(model => model.sobrenome)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.descricao)
+            @Html.DisplayFor(model => model.sobrenome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.usuarioId)
+            @Html.DisplayNameFor(model => model.email)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.usuarioId)
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.mensagem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.mensagem)
         </dd>
     </dl>
 </div>

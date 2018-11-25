@@ -53,7 +53,14 @@ namespace Pedrinho.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> Final(Usuario usuario)
+
+        {
+            return View();
+
+        }
+
+            public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 

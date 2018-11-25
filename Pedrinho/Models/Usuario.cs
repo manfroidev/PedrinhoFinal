@@ -8,7 +8,7 @@ namespace Pedrinho.Models
     {
         public int usuarioId { get; set; }
 
-        [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Somente letras e de 5 a 15 caracteres")]
+        [RegularExpression(@"[a-zA-Z]{3,15}", ErrorMessage = "Somente letras e de 5 a 15 caracteres")]
         [Required(ErrorMessage = "O nome obrigatorio ! ! !")]
         public string nome { get; set; }
 

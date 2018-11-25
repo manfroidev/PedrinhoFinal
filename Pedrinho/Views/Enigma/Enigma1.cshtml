@@ -20,19 +20,21 @@
 </div>
 <br /><br /><br />
 
-<div class="txtEnigmas">
-    <p>
-        Um vigia noturno vivia dormindo durante seu trabalho. Um dia, o chefe avisou que se isso acontecesse novamente, ele seria demitido. Na noite seguinte o chefe o pegou no flagra, com a cabeça apoiada sobre as mãos e os cotovelos sobre os joelhos. "Te peguei!", declarou o chefe. O vigia noturno acordou assustado e respondeu ao chefe utilizando apenas uma palavra. O chefe, então, se desculpou e foi embora.
-        <br /><br></br>
-        Qual palavra o vigia falou?
-    </p>
-</div>
+            <div class="txtEnigmas">
+                <p>
+                    Um vigia noturno vivia dormindo durante seu trabalho. Um dia, o chefe avisou que se isso acontecesse novamente, ele seria demitido. Na noite seguinte o chefe o pegou no flagra, com a cabeça apoiada sobre as mãos e os cotovelos sobre os joelhos. "Te peguei!", declarou o chefe. O vigia noturno acordou assustado e respondeu ao chefe utilizando apenas uma palavra. O chefe, então, se desculpou e foi embora.
+                    <br /><br></br>
+                    Qual palavra o vigia falou?
+                </p>
+                <form asp-action="Enigma1">
+
+                    <input asp-for="resposta" class="campoResposta" placeholder="Qual a resposta?"/>
+                    <input type="submit" value="enviar" class="btnSalvar" /><br /><br />
+                    <span asp-validation-for="resposta" class="text-danger"></span>
+
+                </form>
+            </div>
 
 
-<form asp-action="Enigma1">
 
-    <input asp-for="resposta" class="campoForm" />
-    <input type="submit" value="enviar" />
-    <span asp-validation-for="resposta" class="text-danger"></span>
-
-</form>
+<br /><br /><br /><br /><br />

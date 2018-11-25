@@ -88,7 +88,7 @@ namespace Pedrinho.Controllers
 
             if (certo)
             {
-                return RedirectToAction("Index", "Contato");
+                return RedirectToAction("Create", "Contato");
                 
             }
             else

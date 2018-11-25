@@ -2,60 +2,69 @@
 
 @{
     ViewData["Title"] = "Create";
+
 }
+<body style="background-color: black;"></body>
 
-<script src="~/js/jquery.mask.js"></script>
+<script type="text/javascript" src="~/js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    function mudar() {
+        $("#traduz").text("Parabéns, estamos muito felizes por você estar aqui. nos envie seus comentários ! ! ! :=)");     
+        $("#traduz").css("color", "green");     
+    }
+</script>
 
-<h2>Create</h2>
-
-<h4>contato</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
-                <span asp-validation-for="nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="descricao" class="control-label"></label>
-                <input asp-for="descricao" class="form-control" />
-                <span asp-validation-for="descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioId" class="control-label"></label>
-                <input asp-for="usuarioId" class="form-control" id="teste"/>
-                <span asp-validation-for="usuarioId" class="text-danger"></span>
-            </div>
-
-         
+<center>
+    <h1 id="traduz" style="color:white">Congratulations, we're very happy you got here. Send us your comments ! ! ! :=)</h1>
+    <button onclick="mudar()" class="btnSalvar">Traduzir para pt-BR</button>
 
 
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+    <hr />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label asp-for="nome" class="campoTxt"></label>
+            <input asp-for="nome" class="campoForm" />
+            <span asp-validation-for="nome" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="sobrenome" class="campoTxt"></label>
+            <input asp-for="sobrenome" class="campoForm" />
+            <span asp-validation-for="sobrenome" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="email" class="campoTxt"></label>
+            <input asp-for="email" class="campoForm" />
+            <span asp-validation-for="email" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="telefone" class="campoTxt"></label>
+            <input asp-for="telefone" class="campoForm" />
+            <span asp-validation-for="telefone" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="mensagem" class="campoTxt"></label>
+            <input asp-for="mensagem" class="campoForm" />
+            <span asp-validation-for="mensagem" class="text-danger"></span>
+        </div><br />
+        <div class="form-group">
+            <input type="submit" value="Enviar" class="btn btn-default" />
+        </div>
+    </form>
+
+    <div>
+        <a asp-action="Index">Voltar</a>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</center>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
+<script type="text/javascript">
+    $(document).ready(function () {
 
-
-<script>
-
-    $(document).ready(){
-        $('#teste').mask('0000-0000');
-    }
-
-
+        alert('Parabens você concluiu nossos enigmas, nos deixe uma mensagem !')
+    });
 </script>
