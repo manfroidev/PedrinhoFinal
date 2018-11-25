@@ -70,7 +70,7 @@ namespace Pedrinho.Controllers
                 {
                     _context.Add(usuario);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Usuario");
                 }
 
            
@@ -94,9 +94,21 @@ namespace Pedrinho.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                bool existe = _context.Usuario.Where(a => a.nome == usuario.nome).Any();
+
+                if (existe)
+                {
+                    ModelState.AddModelError("nome", "Esse usuario ja existe!!!");
+                }
+
+                else
+                {
+                    _context.Add(usuario);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index", "Home");
+                }
+
+
             }
             return View(usuario);
         }
