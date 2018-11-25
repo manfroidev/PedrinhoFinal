@@ -48,14 +48,23 @@
             <input asp-for="mensagem" class="campoForm" />
             <span asp-validation-for="mensagem" class="text-danger"></span>
         </div><br />
-        <div class="form-group">
-            <input type="submit" value="Enviar" class="btn btn-default" />
-        </div>
+              <div class="form-group">
+                 
+
+
+                  <div>
+                      <br />
+
+                      <a href="~/Enigma/Enigma" class="btnVoltar">
+                          <input type="button" value="Voltar" class="btnVoltar" />
+                      </a>
+                      <input type="submit" value="Enviar" class="btnSalvar"  />
+                  </div>
+
+              </div>
+
     </form>
 
-    <div>
-        <a asp-action="Index">Voltar</a>
-    </div>
 </center>
 
 @section Scripts {
