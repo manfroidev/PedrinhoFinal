@@ -59,9 +59,21 @@ namespace Pedrinho.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                bool existe = _context.Usuario.Where(a => a.nome == usuario.nome).Any();
+
+                if (existe)
+                {
+                    ModelState.AddModelError("nome", "Esse usuario ja existe!!!");
+                }
+
+                else
+                {
+                    _context.Add(usuario);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Index", "Home");
+                }
+
+           
             }
             return View(usuario);
         }

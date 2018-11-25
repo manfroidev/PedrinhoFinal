@@ -7,7 +7,7 @@ function Executar() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.z = 500;
+    camera.position.z = 900;
 
     geometry = new THREE.BoxGeometry(100, 100, 100);
     material = new THREE.MeshBasicMaterial({ color: 0xD1A963, wireframe: true });
@@ -18,12 +18,9 @@ function Executar() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setClearColor(0x1F5A94);
     renderer.setSize(window.innerWidth, window.innerHeight);
-
     
 
-    document.body.appendChild(renderer.domElement)
-
-    
+    document.body.appendChild(renderer.domElement)    
 
 
 

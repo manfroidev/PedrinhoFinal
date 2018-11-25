@@ -25,7 +25,9 @@
         <form asp-controller="Home" asp-action="Index">
             <label>USUÁRIO<input type="text" asp-for="nome" ng-keydown="verificaLetra()" id="usuario" placeholder="USUÁRIO" required class="form-control"></label><br><br>
             <label>SENHA<input type="password" asp-for="senha" placeholder="SENHA" required CLASS="form-control"></label><br><br />
+            <span asp-validation-for="nome" class="text-danger"></span><br /><br />
             <input value="ENTRAR" type="submit" class="btn btn-success" /><br><br />
+            
         </form>
 
         <a asp-area="" asp-controller="Usuario" asp-action="Novo">Se Cadastre aqui</a>

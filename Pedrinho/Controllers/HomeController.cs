@@ -47,8 +47,9 @@ namespace Pedrinho.Controllers
                 }
 
             }
-       
-            
+
+            ModelState.AddModelError("nome", "Usuario ou senha invalida");
+
             return View();
         }
 

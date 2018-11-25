@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+<script src="~/js/jquery.mask.js"></script>
+
 <h2>Create</h2>
 
 <h4>contato</h4>
@@ -24,9 +26,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="usuarioId" class="control-label"></label>
-                <input asp-for="usuarioId" class="form-control" />
+                <input asp-for="usuarioId" class="form-control" id="teste"/>
                 <span asp-validation-for="usuarioId" class="text-danger"></span>
             </div>
+
+         
+
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -41,3 +48,14 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
+<script>
+
+    $(document).ready(){
+        $('#teste').mask('0000-0000');
+    }
+
+
+</script>

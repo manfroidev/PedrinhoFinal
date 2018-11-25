@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Pedrinho.Models.Enigma>
+﻿@model Pedrinho.Models.Enigma
 
 @{
     ViewData["Title"] = "Index";
@@ -28,3 +28,11 @@
     </p>
 </div>
 
+
+<form asp-action="Enigma1">
+
+    <input asp-for="resposta" class="campoForm" />
+    <input type="submit" value="enviar" />
+    <span asp-validation-for="resposta" class="text-danger"></span>
+
+</form>

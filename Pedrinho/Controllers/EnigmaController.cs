@@ -26,7 +26,7 @@ namespace Pedrinho.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Enigma.ToListAsync());
-        }   
+        }
 
 
         // GET: Enigmata/Details/5
@@ -51,7 +51,7 @@ namespace Pedrinho.Controllers
         public IActionResult Create()
         {
             return View();
-        }   
+        }
 
         // POST: Enigmata/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -79,6 +79,29 @@ namespace Pedrinho.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Enigma1(Enigma enigma)
+        {
+            bool certo = _context.Enigma.Where(a => a.resposta == enigma.resposta).Any();
+
+            if (certo)
+            {
+                return RedirectToAction("Index", "Contato");
+                
+            }
+            else
+            {
+                ModelState.AddModelError("resposta", "Resposta Invalida");
+               
+            }
+
+            return View(enigma);
+        }
+
+
+
         // GET: Enigmata/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
